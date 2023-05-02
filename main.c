@@ -7,7 +7,7 @@
 
 
 int main() {
-    int i;
+    //int i;
     char texto[MAX_TAM_TEXTO];
     char esperado[MAX_TAM_TEXTO];
     char k[MAX_TAM_TEXTO];
@@ -99,8 +99,28 @@ int main() {
     //// Avaliando o resultado
     avaliar(texto, esperado);
 
+    // *****************************
+    // Teste da decifragem de César
+    // *****************************
+    printf("**********************************\n");
+    printf("Testando decifragem de César\n");
+    printf("**********************************\n");
 
+    /* 1º Teste */
+    printf("k = -1");
+    strcpy(texto, "bcdefghijklmnopqrstuvwayzx");
+    strcpy(esperado, "abcdefghijklmnopqrstuvzxyw");
+    decifrar_Cesar(texto, strlen(texto), -1);
 
+    // Compare the decrypted plaintext to the expected result
+    if (strcmp(texto, esperado) != 0) {
+        printf("- ERRO\n");
+        printf("    Resultado esperado: %s\n", esperado);
+        printf("    Resultado obtido:   %s\n", texto);
+    } else {
+        printf(" - OK\n");
+    }
+    
     
     // **********************************
     // Teste da cifra de Vernam Mauborgne
@@ -125,6 +145,21 @@ int main() {
     gabarito_Vernam_Mauborgne(esperado, 2);
     avaliar(texto, esperado);
 
+    // ****************************************
+    // Teste da decifragem de Vernam Mauborgne
+    // ****************************************
+    printf("****************************************\n");
+    printf("Testando decifragem de Vernam Mauborgne\n");
+    printf("****************************************\n");
+
+    memset(texto, 0, strlen(texto)); //limpar var texto 
+    printf("1º Teste\n");
+    strcpy(texto, "abcdefghijklmnopqrstuvzxyw");
+    strcpy(k,     "yb33ef44ij55mno77rstuv99y1");
+    cifrar_Vernam_Mauborgne(texto, strlen(texto), k);
+    decifrar_Vernam_Mauborgne(texto, strlen(texto), k);
+    gabarito_Vernam_Mauborgne(esperado, 3);
+    avaliar(texto, esperado);
 
     return 0;
 }
