@@ -15,7 +15,7 @@ void avaliar(char *texto, char *esperado) {
     if (strcmp(texto, esperado) != 0) {
         printf("- ERRO\n");
         printf("    Resultado esperado: %s\n", esperado);
-        printf("    Resultado obtido: %s\n", texto);
+        printf("    Resultado obtido  : %s\n", texto);
         printf("Em decimal:\n");
         printf("    Esperado:"); mostrar_chars(esperado, strlen(esperado));
         printf("    Obtido  :"); mostrar_chars(texto, strlen(texto));
@@ -81,6 +81,54 @@ void gabarito_Vernam_Mauborgne(char * gabarito, int teste) {
             gabarito[44] = 0;
             break;
 
+        case 3:
+            memset(gabarito, 0, sizeof(char)*MAX_TAM_TEXTO);
+            gabarito[0] = 'a';
+            gabarito[1] = 'b';
+            gabarito[2] = 'c';
+            gabarito[3] = 'd';
+            gabarito[4] = 'e';
+            gabarito[5] = 'f';
+            gabarito[6] = 'g';
+            gabarito[7] = 'h';
+            gabarito[8] = 'i';
+            gabarito[9] = 'j';
+            gabarito[10] = 'k';
+            gabarito[11] = 'l';
+            gabarito[12] = 'm';
+            gabarito[13] = 'n';
+            gabarito[14] = 'o';
+            gabarito[15] = 'p';
+            gabarito[16] = 'q';
+            gabarito[17] = 'r';
+            gabarito[18] = 's';
+            gabarito[19] = 't';
+            gabarito[20] = 'u';
+            gabarito[21] = 'v';
+            gabarito[22] = 'z';
+            gabarito[23] = 'x';
+            gabarito[24] = 'y';
+            gabarito[25] = 'w';
+            gabarito[26] = 0;
+            gabarito[27] = 0;
+            gabarito[28] = 0;
+            gabarito[29] = 0;
+            gabarito[30] = 0;
+            gabarito[31] = 0;
+            gabarito[32] = 0;
+            gabarito[33] = 0;
+            gabarito[34] = 0;
+            gabarito[35] = 0;
+            gabarito[36] = 0;
+            gabarito[37] = 0;
+            gabarito[38] = 0;
+            gabarito[39] = 0;
+            gabarito[40] = 0;
+            gabarito[41] = 0;
+            gabarito[42] = 0;
+            gabarito[43] = 0;
+            gabarito[44] = 0;
+            break;
         default:
             printf("ERRO! Teste não definido!\n");
     }
