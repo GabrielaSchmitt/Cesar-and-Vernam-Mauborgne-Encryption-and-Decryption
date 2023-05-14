@@ -1,4 +1,10 @@
+#ifndef __CIFRAS__
+#define __CIFRAS__
 #include "defines.h"
+#include <inttypes.h>
+#include <stdio.h>
+#include <string.h>
+#include <ctype.h>
 
 // *****************************************************************
 // Cabeçalhos dos cifradores
@@ -11,6 +17,9 @@
 
 void cifrar_Cesar(char *texto, int tamanho, int chave);
 void cifrar_Vernam_Mauborgne(char *texto, int tamanho, char *chave);
+void cifrar_Rail_Fence(char *texto, int tamanho, uint32_t chave);
+void cifrar_Vigenere(char *texto, int tamanho, char *chave);
+
 
 // *****************************************************************
 // Cabeçalhos dos decifradores
@@ -22,3 +31,5 @@ void cifrar_Vernam_Mauborgne(char *texto, int tamanho, char *chave);
 // *****************************************************************
 void decifrar_Cesar(char *texto, int tamanho, int chave);
 void decifrar_Vernam_Mauborgne(char *texto, int tamanho, char *chave);
+
+#endif
