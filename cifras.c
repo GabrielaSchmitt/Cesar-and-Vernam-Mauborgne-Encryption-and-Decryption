@@ -20,15 +20,15 @@ void cifrar_Vernam_Mauborgne(char *texto, int tamanho, char *chave){
 }
 
 void decifrar_Cesar(char *texto, int tamanho, int chave) {
-    char alpha[MAX_ALPHA] = {'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'};
-
-    for (int i = 0; i < tamanho; i++) { // anda pelo texto 
-        for (int j = MAX_ALPHA-1; j >= 0; j--) {
-            if (alpha[j] == texto[i]) {
-                texto[i] = alpha[(j + chave + MAX_ALPHA) % MAX_ALPHA];
-                break;
+    for (int i = 0; i < tamanho; i++) {
+        char c = texto[i];
+        if (c >= 'a' && c <= 'z') {
+            c -= chave % MAX_ALPHA;
+            if (c < 'a') {
+                c += MAX_ALPHA;
             }
         }
+        texto[i] = c;
     }
 }
 
